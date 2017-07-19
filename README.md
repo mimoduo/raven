@@ -4,7 +4,7 @@
 
 > Raven is a *refined and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass built with lightning, simplicity, and awesomeness in mind.
 
-![running & making changes with Raven](http://i.imgur.com/ThfYq86.mp4)
+![running & making changes with Raven](https://media.giphy.com/media/3oge8exdRyvOPDNSYo/giphy.gif)
 
 ## Features
 
