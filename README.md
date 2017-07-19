@@ -1,6 +1,6 @@
 # Raven
 
-> Raven is a refined and flexible static blog generator fed with Markdown and processed with gulp, pug, and sass.
+> Raven is a *refined and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass.
 
 ## Features
 
@@ -24,7 +24,7 @@ npm install
 gulp
 ```
 
-If you're successful, you're ready to build with Raven XD
+*If you're successful*, you're ready to build with Raven XD
 
 ## Contributions
 
@@ -34,6 +34,6 @@ If you're successful, you're ready to build with Raven XD
 
 The best kind of contribution is a **successful blog**. Add yours below for extra recognition in the github spotlight ;)
 
-[mimoduo](http://mimoduo.surge.sh/)
-[raven](http://raven.surge.sh/)
-[your blog](#)
+* [mimoduo](http://mimoduo.surge.sh/)
+* [raven](http://raven.surge.sh/)
+* [your blog](#)
