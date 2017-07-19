@@ -1,6 +1,10 @@
+![raven logo](https://image.prntscr.com/image/0cI781sNT1KgO53d6CWfdQ.png)
+
 # Raven
 
-> Raven is a *refined and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass.
+> Raven is a *refined and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass built with lightning, simplicity, and awesomeness in mind.
+
+![running & making changes with Raven](http://imgur.com/ThfYq86)
 
 ## Features
 
@@ -24,7 +28,7 @@ npm install
 gulp
 ```
 
-*If you're successful*, you're ready to build with Raven XD
+Afterwards, Raven will spin up a live reload server and begin to watch for any changes. At this point, you're either ready to dive right in (especially for those familiar with Pelican) or take a peak into the raven doc.
 
 ## Contributions
 

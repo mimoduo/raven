@@ -402,10 +402,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   line-height: 1.25;
-  margin: 1.875rem 0 1.25rem; }
-  @media screen and (min-width: 980px) {
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 3.125rem; } }
+  margin: 3.125rem 0 1.25rem; }
 
 h1 {
   font-size: 2.5rem; }
@@ -462,14 +459,14 @@ h6 {
     content: ''; }
   .site-link:before {
     right: 100%;
-    margin-right: -1.175em;
+    margin-right: -1.185em;
     background: linear-gradient(145deg, #000, #280353);
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
     -webkit-transform: rotate(18deg) skew(45deg);
     transform: rotate(18deg) skew(45deg); }
   .site-link:after {
-    left: 1.515em;
+    left: 1.525em;
     background: linear-gradient(-145deg, #000, #280353);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
@@ -572,7 +569,7 @@ svg {
 
 .social-nav-item {
   display: inline-block;
-  margin: 0 1.25em 0 0; }
+  margin: 0 1.875em 0 0; }
 
 .social-nav-link {
   display: block;
@@ -589,6 +586,8 @@ svg {
 
 .social-nav-label {
   display: inline-block;
+  font-size: 125%;
+  font-weight: 700;
   vertical-align: middle; }
 
 .post {

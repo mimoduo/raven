@@ -2,7 +2,7 @@
 title: Raven Documentation
 date: 2017-17-28
 category: projects
-summary: Time to get drilling down to the Raven blog workflow - from getting familiar with Raven's structure to creating your own theme. If you're familiar with Pelican, you'll feel right at home (p^-^)p
+summary: AAWWW yeaaa!!! Time to get drilling down to the Raven blog workflow - from getting familiar with Raven's structure to creating your own theme. If you're familiar with Pelican, you'll feel right at home (p^-^)p
 ---
 
 ## Getting Started
@@ -117,25 +117,25 @@ h2= data.custom
 
 ## Structuring Your Blog
 
-The first thing you'll likely want to do is modify the templates a bit. If you haven't written in pug before, here's an [awesome pug tutorial](http://mimoduo.surge.sh/learn-pug-js-with-pugs.html) for you!
+The first thing you'll likely want to do is modify the templates a bit, starting from base.pug. If you haven't written in pug before, here's an [awesome pug tutorial](http://mimoduo.surge.sh/learn-pug-js-with-pugs.html) for you!
 
 > **Remember**, all of the variables used within each template are provided to pug from your *package.json's* `"data"` *object* and *each markdown post's front matter*.
 
 **base.pug** is the foundational template that provides the structure to all other page templates, namely:
 
-* index.pug
-* post-detail.pug
+* **index.pug**: *list view for blog articles*
+* **post-detail.pug**: *detail view for a specific blog article*
 
 All other templates are considered **partials** that are included on the aforementioned templates:
 
-* post.pug
-* pager.pug
-* analytics.pug: *conditionally included based on your blog's settings*
-* disqus.pug: *conditionally included based on your blog's settings*
+* **post.pug**: foundational template to represent each post
+* **pager.pug**: provides the ability to chunk your blog list
+* **analytics.pug**: *conditionally included based on your blog's settings*
+* **disqus.pug**: *conditionally included based on your blog's settings*
 
 ## Styling Your Blog
 
-All of the classes used within the base templates are available to style within the **feather theme** under `/themes/feather/sass/*`. For those new to sass, here's a quick [sass cheat sheet](https://codepen.io/mimoduo/post/sass-cheat-sheet) for you!
+All of the classes used within the base templates are available to style within the **feather theme** under `/themes/feather/sass/*`. For those new to Sass, here's a quick [sass cheat sheet](https://codepen.io/mimoduo/post/sass-cheat-sheet) for you!
 
 There are a few utility files to help you through development:
 
@@ -145,7 +145,7 @@ There are a few utility files to help you through development:
 
 ### Creating Your Own Theme
 
-Creating your own theme is a piece of cake. Since Raven treats markup and styles separately, you can continue to use the feather theme templates while developing your own theme outside. *Just reconfigure your blog's settings to point to a different theme folder*:
+Creating your own theme is a piece of cake. Since Raven treats markup and styles separately, you can continue to use the feather theme templates while developing your own theme outside of feather. *Just reconfigure your blog's settings to point to a different theme folder*:
 
 ```json
 "data": {
@@ -165,8 +165,15 @@ Each blog article is written in **Markdown** with the addition of **front matter
 ---
 title: Blog Post Title Field
 date: 2017-07-24
+category: navie
 summary: Blog Post Summary Field
 ---
 
 # Your Markdown Content!
 ```
+
+After saving this post, you'll notice a new entry on the index page, a new detail page, and a new category in the main navigation.
+
+## Fly With the Wind!
+
+All the basics of Raven have been covered! There's a bit more to explore and a lot more on the way. I hope you enjoy publishing your blog with Raven! And if you have already published your blog, wouldn't you want some free recognition? Jump over to the [Raven github repo](https://github.com/mimoduo/raven) and add your blog to the [Blogs Running Raven](https://github.com/mimoduo/raven#blogs-running-raven) section.

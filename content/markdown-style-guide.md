@@ -1,7 +1,7 @@
 ---
 title: Markdown Style Guide
 date: 2017-17-27
-category: markdown
+category: style guide
 summary: The basics of markdown ready to style!
 ---
 
@@ -26,6 +26,10 @@ summary: The basics of markdown ready to style!
 ### Formatting Text
 
 A paragraph can be as simple as **bolded text** or as hard as *italicized marks*. Yet creating a [link](google.com) can be as easy as pie.
+
+### Blockquotes
+
+> And there's always the trusty blockquote to emphasize an incredible situation.
 
 ### Unordered List
 

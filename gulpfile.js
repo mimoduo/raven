@@ -109,6 +109,7 @@ gulp.task('process', ['prep'], function() {
 
     nav.push({
       name: category,
+      url: category.replace(' ', '-') + '.html',
       posts: []
     });
   }
@@ -174,7 +175,7 @@ gulp.task('categories', ['process'], function() {
       posts: nav[item].posts
     });
 
-    var dir = 'output/' + nav[item].name.toLowerCase() + '.html'
+    var dir = 'output/' + nav[item].name.toLowerCase().replace(' ', '-') + '.html'
 
     fs.writeFile(dir, html, function(err) {
       if (err) console.log(err);

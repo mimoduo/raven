@@ -49,7 +49,7 @@
 
     .social-nav-item {
       display: inline-block;
-      margin: 0 em(20) 0 0;
+      margin: 0 em(30) 0 0;
     }
 
       .social-nav-link {
@@ -71,5 +71,7 @@
 
         .social-nav-label {
           display: inline-block;
+          font-size: 125%;
+          font-weight: 700;
           vertical-align: middle;
         }

@@ -52,7 +52,7 @@ html(lang="en")
             ul.main-nav-list
               each category in categories
                 li.main-nav-item
-                  a.main-nav-link(href=category.name + '.html')= category.name
+                  a.main-nav-link(href=category.url)= category.name
     main.page-main
       .row
         .page-main-content

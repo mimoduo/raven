@@ -8,11 +8,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   line-height: 1.25;
-  margin: rem(30) 0 rem(20);
-
-  @media #{$min_lg} {
-    margin-top: rem(50);
-  }
+  margin: rem(50) 0 rem(20);
 }
 
 h1 {
