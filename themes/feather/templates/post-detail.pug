@@ -1,0 +1,9 @@
+extends base.pug
+
+block pageData
+  - var title = post.title
+  
+block content
+  - var detail = true
+  - var postClass = 'post-detail-theme'
+  include post

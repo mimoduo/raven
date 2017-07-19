@@ -1,0 +1,36 @@
+/* Document */
+
+html {}
+
+  body {}
+
+
+/* Grid */
+
+@mixin row {
+  max-width: $mq_min_md + ($gutter * 2);
+  margin-right: auto;
+	margin-left: auto;
+	padding-right: $gutter;
+	padding-left: $gutter;
+}
+
+.row {
+	@include row;
+}
+
+
+/* Page */
+
+.page {}
+
+  .page-body {}
+
+    .page-header {
+      margin-bottom: em(60);
+      padding-top: em(60);
+    }
+
+    .page-footer {
+      padding: em(60) 0;
+    }

@@ -1,0 +1,27 @@
+article.post(class=postClass)
+  header.post-header
+    h2.post-title 
+      a.post-link(href=post.link)= post.title
+    .post-summary
+      p= post.summary
+    if detail
+      .post-details
+        .post-detail
+          span.post-detail-icon
+            +icon("clock")
+          time(datetime=new Date(post.date)).post-detail-label= post.date
+        .post-detail
+          span.post-detail-icon
+            +icon("label")
+          span.post-detail-label In&nbsp;
+            a.post-detail-link(href=post.category + ".html")= post.category
+    if !detail
+      a.post-readmore(href=post.link) Read More
+  if detail
+    .post-content
+      != post.markup
+    footer.post-footer
+      .post-comments
+        h2 Your Thoughts
+        #disqus_thread
+        include disqus

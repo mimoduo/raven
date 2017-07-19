@@ -1,0 +1,29 @@
+// https://github.com/isagalaev/highlight.js/tree/master/src/styles
+
+[class^="language"] {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: em(30);
+  padding: em(20);
+  background: #272822;
+  border-radius: em(4);
+  color: #f8f8f8;
+}
+
+  $p1: #80aafc;
+  $p2: #72cdc6;
+
+  .hljs-comment {
+    opacity: .45;
+  }
+
+  .hljs-attribute,
+  .hljs-keyword {
+    color: $p1;
+  }
+
+  .hljs-selector-class,
+  .hljs-name,
+  .hljs-string {
+    color: $p2;
+  }

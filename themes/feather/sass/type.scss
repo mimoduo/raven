@@ -1,0 +1,50 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-size: em(16);
+  font-weight: 300;
+  line-height: (28 / 16);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.25;
+  margin: rem(30) 0 rem(20);
+
+  @media #{$min_lg} {
+    margin-top: rem(50);
+  }
+}
+
+h1 {
+  font-size: rem(40);
+
+  @media #{$min_md} {
+    font-size: rem(50);
+  }
+}
+
+h2 {
+  font-size: rem(30);
+
+  @media #{$min_md} {
+    font-size: rem(40);
+  }
+}
+
+h3 {
+  font-size: rem(25);
+
+  @media #{$min_md} {
+    font-size: rem(30);
+  }
+}
+
+h4 {
+  font-size: rem(20);
+}
+
+h5,
+h6 {
+  font-family: 'Oxygen', sans-serif;
+  text-transform: uppercase;
+}

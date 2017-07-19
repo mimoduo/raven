@@ -1,0 +1,10 @@
+- var page = 1
+
+if pager && pager > 1
+  nav.pager
+    while page < pager + 1
+      if page == 1
+        a.pager-link(href="./")= page
+      else 
+        a.pager-link(href="page-" + page + ".html")= page
+      - page++

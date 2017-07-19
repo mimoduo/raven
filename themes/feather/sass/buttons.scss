@@ -1,0 +1,19 @@
+@mixin button {
+  display: inline-block;
+  border: em(2) solid #D0B240;
+  margin-right: em(8);
+  margin-bottom: em(8);
+  padding: em(10) em(20);
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  transition:
+    background .25s,
+    color .25s;
+
+  &:focus,
+  &:hover {
+    background: #D0B240;
+    color: #000;
+  }
+}

@@ -1,0 +1,20 @@
+$gutter: 20px;
+
+$mq-min-ht: 800;
+$mq-min-xs: 320;
+$mq-min-sm: 500;
+$mq-min-md: 740;
+$mq-min-lg: 980;
+$mq-min-xl: 1200;
+
+$min-xs: "screen and (min-width:" + ($mq-min-xs * 1px) + ")";
+$min-sm: "screen and (min-width:" + ($mq-min-sm * 1px) + ")";
+$min-md: "screen and (min-width:" + ($mq-min-md * 1px) + ")";
+$min-lg: "screen and (min-width:" + ($mq-min-lg * 1px) + ")";
+$min-xl: "screen and (min-width:" + ($mq-min-xl * 1px) + ")";
+
+$max-xs: "screen and (max-width:" + ($mq-min-xs - 1px) + ")";
+$max-sm: "screen and (max-width:" + ($mq-min-sm - 1px) + ")";
+$max-md: "screen and (max-width:" + ($mq-min-md - 1px) + ")";
+$max-lg: "screen and (max-width:" + ($mq-min-lg - 1px) + ")";
+$max-xl: "screen and (max-width:" + ($mq-min-xl - 1px) + ")";
