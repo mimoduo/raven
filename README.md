@@ -26,7 +26,7 @@ npm install
 gulp
 ```
 
-Afterwards, Raven will spin up a live reload server and begin to watch for any changes. At this point, you're either ready to dive right in (especially for those familiar with Pelican) or take a peak into the raven doc.
+Afterwards, Raven will spin up a live reload server and begin to watch for any changes. At this point, you're either ready to dive right in (especially for those familiar with Pelican) or take a peak into the [raven doc](https://github.com/mimoduo/raven/blob/master/content/raven-doc.md).
 
 ![running & making changes with Raven](https://media.giphy.com/media/3oge8exdRyvOPDNSYo/giphy.gif)
 
