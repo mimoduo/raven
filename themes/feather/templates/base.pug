@@ -3,8 +3,8 @@ mixin icon(name)
     use(xlink:href="#" + name.toLowerCase())
 
 block pageData
-  - var title = ""
-  - var description = ""
+  - title = ""
+  - description = ""
 
 doctype html
 html(lang="en")
@@ -22,15 +22,30 @@ html(lang="en")
       title= data.site.name + ' | ' + title
     else
       title= data.site.name
-    meta(
-      name="description"
-      content= description
-    )
+    if description
+      meta(
+        name="description"
+        content= description
+      )
+    else
+      meta(
+        name="description"
+        content= data.site.description
+      )
+    mixin favicon(sizes)
+      each size in sizes
+        link(
+          rel="icon"
+          href="favicon-" + size + "x" + size + ".png"
+          sizes=size + "x" + size
+          type="image/png"
+        )
+    +favicon([16, 32])
     link(
       rel="stylesheet"
       href="css/site.css"
     )
-    - var includedFonts = "";
+    - includedFonts = "";
     each font, index in data.fonts
       if index > 0
         - includedFonts += "|"
@@ -68,5 +83,5 @@ html(lang="en")
                     span.social-nav-icon
                       +icon(link.name)
                     span.social-nav-label= link.name
-    if data.analytics
+    if data.analytics.include
       include analytics

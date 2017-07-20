@@ -15,6 +15,7 @@
   "data": {
     "site": {
       "name": "Raven",
+      "description": "A refined and flexible static blog generator",
       "url": "http://raven.surge.sh/"
     },
     "fonts": [
@@ -27,7 +28,10 @@
         "weights": "300,400,700"
       }
     ],
-    "analytics": true,
+    "analytics": {
+      "include": true,
+      "UA": "UA-66664949-3"
+    },
     "disqus": {
       "include": true,
       "shortname": "raven-blog"
@@ -40,11 +44,11 @@
       "social": [
         {
           "name": "Github",
-          "url": "https://github.com"
+          "url": "https://github.com/mimoduo"
         },
         {
           "name": "Codepen",
-          "url": "https://codepen.io"
+          "url": "https://codepen.io/mimoduo/"
         }
       ]
     }

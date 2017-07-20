@@ -1,7 +1,9 @@
 extends base.pug
 
+block pageData
+  
 block content
   each post in posts
-    - var detail = false
+    - detail = false
     include post.pug
   include pager
