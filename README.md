@@ -6,13 +6,15 @@
 
 ## Features
 
-* **Fast (re)build times** and *completely static output*
+* ⚡ **Fast (re)build times** and *completely static output*
 * **Semantic HTML boilerplate** written in [Pug](https://github.com/pugjs/pug)
 * **Theme-able CSS boilerplate** written in [Sass](http://sass-lang.com/guide)
 * **Live reloading** and device synchronization
 * Automatic **syntax highlighting** via [highlight.js](https://highlightjs.org/)
 * Integration boilerplate for Disqus and Google Analytics
+* Automatically generated RSS feeds with rss2, atom1, json1 support
 * Streamlined [surge.sh](http://surge.sh/help/getting-started-with-surge) deployments
+* Drafts and future post publication support
 
 ## Getting Started
 
@@ -26,9 +28,7 @@ npm install
 gulp
 ```
 
-Afterwards, Raven will spin up a live reload server and begin to watch for any changes. At this point, you're either ready to dive right in (especially for those familiar with Pelican) or take a peak into the [raven doc](https://github.com/mimoduo/raven/blob/master/content/raven-doc.md).
-
-![running & making changes with Raven](https://media.giphy.com/media/3oge8exdRyvOPDNSYo/giphy.gif)
+*That's it*! **Raven will spin up a live reload server and begin to watch for any changes**. At this point, you're either ready to dive right in (especially for those familiar with Pelican blogs) or take a peak into the [raven doc](https://github.com/mimoduo/raven/blob/master/content/raven-doc.md).
 
 ## Contributions
 

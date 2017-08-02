@@ -1,6 +1,6 @@
 ---
 title: Raven Documentation
-date: 2017-17-28
+date: 2017-06-29
 category: projects
 summary: AAWWW yeaaa!!! Time to get drilling down to the Raven blog workflow - from getting familiar with Raven's structure to creating your own theme. If you're familiar with Pelican, you'll feel right at home (p^-^)p
 ---

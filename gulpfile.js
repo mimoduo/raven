@@ -4,8 +4,9 @@ var gulp = require('gulp'),
     fs = require('fs'),
     path = require('path'),
     del = require('del'),
-    glob = require('glob'),
+    globby = require('globby'),
     frontMatter = require('front-matter'),
+    feed = require('feed'),
     hljs = require('highlight.js'),
     mdnh = require('markdown-it-named-headers'),
     markdown = require('markdown-it')({
@@ -79,17 +80,24 @@ gulp.task('process', ['prep'], function() {
   blog = [];
   nav = [];
 
-  var files = glob.sync('content/*.md');
+  var files = globby.sync([
+    'content/*.md',
+    '!content/_*md'
+  ]);
 
   for (file in files) {
     var contents = fs.readFileSync(files[file], 'utf8');
 
     var content = frontMatter(contents);
+    var currentDate = new Date();
     content.attributes.markup = markdown.render(content.body);
-    content.attributes.date = formatDate(content.attributes.date);
     content.attributes.name = path.basename(files[file], '.md');
     content.attributes.link = content.attributes.name + '.html';
-    blog.push(content.attributes);
+
+    if(content.attributes.date <= currentDate) {
+      content.attributes.date = formatDate(content.attributes.date);
+      blog.push(content.attributes);
+    }
   }
 
   blog.sort(function(a, b) {
@@ -114,6 +122,7 @@ gulp.task('process', ['prep'], function() {
     });
   }
 
+  // Prevent duplicate nav labels
   for (var i = 0; i < nav.length; i++) {
     for (var x = i+1; x < nav.length; x++) {
       if (nav[i].name === nav[x].name) {
@@ -135,7 +144,7 @@ gulp.task('process', ['prep'], function() {
 
 gulp.task('index', ['process'], function() {
 
-  var x = 1;
+  var page = 1;
   var division = pkg.data.pager;
 
   for (var i = 0; i <= blog.length; i+=division) {
@@ -150,16 +159,16 @@ gulp.task('index', ['process'], function() {
     var dir;
 
     if (i == 0) {
-      dir = 'output/index.html';
+      dir = pkg.data.static + '/index.html';
     } else {
-      dir = 'output/page-' + x + '.html';
+      dir = pkg.data.static + '/page-' + page + '.html';
     }
 
     fs.writeFile(dir, html, function(err) {
       if (err) console.log(err);
     });
 
-    x++;
+    page++;
   }
 
 });
@@ -175,7 +184,7 @@ gulp.task('categories', ['process'], function() {
       posts: nav[item].posts
     });
 
-    var dir = 'output/' + nav[item].name.toLowerCase().replace(' ', '-') + '.html'
+    var dir = pkg.data.static + '/' + nav[item].name.toLowerCase().replace(' ', '-') + '.html'
 
     fs.writeFile(dir, html, function(err) {
       if (err) console.log(err);
@@ -195,7 +204,7 @@ gulp.task('posts', ['process'], function() {
       post: blog[post]
     });
 
-    var dir = 'output/' + blog[post].name + '.html';
+    var dir = pkg.data.static + '/' + blog[post].name + '.html';
 
     fs.writeFile(dir, html, function(err) {
       if (err) console.log(err);
@@ -246,10 +255,87 @@ gulp.task('sass', function() {
 });
 
 
-gulp.task('surge', ['render'], function() {
+gulp.task('favicon', function() {
+
+  return gulp.src(pkg.data.theme + '/favicons/*')
+    .pipe(gulp.dest(pkg.data.static));
+
+});
+
+
+gulp.task('rss', function() {
+
+  rss = new feed({
+    title: pkg.data.site.name,
+    description: pkg.data.site.description,
+    id: pkg.data.site.url,
+    link: pkg.data.site.url,
+    image: pkg.data.site.url + 'favicon-32x32.png',
+    favicon: pkg.data.site.url + 'favicon.ico',
+    copyright: 'All rights reserved ' + new Date().getFullYear() + ', ' + pkg.author,
+    updated: new Date(2013, 06, 14),
+    feedLinks: {
+      json: pkg.data.site.url + 'json',
+      atom: pkg.data.site.url + 'atom',
+    },
+    author: {
+      name: pkg.author,
+      email: pkg.email,
+      link: pkg.link
+    }
+  });
+
+  var files = globby.sync([
+    'content/*.md',
+    '!content/_*md'
+  ]);
+
+  for (file in files) {
+    var contents = fs.readFileSync(files[file], 'utf8');
+
+    var content = frontMatter(contents);
+    content.attributes.markup = markdown.render(content.body);
+    content.attributes.name = path.basename(files[file], '.md');
+    content.attributes.link = content.attributes.name + '.html';
+
+    rss.addItem({
+      title: content.attributes.title,
+      id: content.attributes.name,
+      link: pkg.data.site.url + content.attributes.link,
+      description: content.attributes.summary,
+      content: content.attributes.markup,
+      author: [{
+        name: pkg.author,
+        email: pkg.email,
+        link: pkg.link
+      }],
+      date: content.attributes.date
+    });
+  }
+
+  var rss2 = rss.rss2();
+  var atom1 = rss.atom1();
+  var json1 = rss.json1();
+
+  fs.writeFile(pkg.data.static + '/feed.xml', rss2, function(err) {
+    if (err) console.log(err);
+  });
+
+  fs.writeFile(pkg.data.static + '/feed.atom', atom1, function(err) {
+    if (err) console.log(err);
+  });
+
+  fs.writeFile(pkg.data.static + '/feed.json', json1, function(err) {
+    if (err) console.log(err);
+  });
+
+});
+
+
+gulp.task('surge', ['render', 'rss'], function() {
 
   return surge({
-    project: './output',
+    project: './' + pkg.data.static,
     domain: pkg.data.site.url
   });
 
@@ -261,7 +347,7 @@ gulp.task('browser-sync', function() {
   browserSync.init({
     logPrefix: pkg.name,
     ui: false,
-    server: './output/',
+    server: './' + pkg.data.static + '/',
     notify: {
       styles: {
         top: 'auto',
@@ -301,6 +387,7 @@ gulp.task('watch', function() {
   gulp.watch(pkg.data.theme + '/icons/*.svg', ['sprite', 'render', 'reload']);
   gulp.watch(pkg.data.theme + '/sass/*.scss', ['sass']);
   gulp.watch(pkg.data.theme + '/templates/*.pug', ['render', 'reload']);
+  gulp.watch(pkg.data.theme + '/favicons/*', ['favicon', 'reload']);
 
 });
 

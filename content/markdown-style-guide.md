@@ -1,6 +1,6 @@
 ---
 title: Markdown Style Guide
-date: 2017-17-27
+date: 2017-06-28
 category: style guide
 summary: The basics of markdown ready to style!
 ---
