@@ -12,7 +12,7 @@
 * **Live reloading** and device synchronization
 * Automatic **syntax highlighting** via [highlight.js](https://highlightjs.org/)
 * Integration boilerplate for Disqus and Google Analytics
-* Automatically generated RSS feeds with rss2, atom1, json1 support
+* Automatically generated RSS feeds with rss2, atom1, and json1 support
 * Streamlined [surge.sh](http://surge.sh/help/getting-started-with-surge) deployments
 * Drafts and future post publication support
 

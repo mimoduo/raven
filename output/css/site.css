@@ -590,6 +590,30 @@ svg {
   font-weight: 700;
   vertical-align: middle; }
 
+/* Pager */
+.pager-link {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.625em;
+  padding: 0.3125em 0.625em;
+  font-weight: 700;
+  color: #000;
+  -webkit-transition: color .25s;
+  transition: color .25s; }
+  .pager-link:focus, .pager-link:hover {
+    color: #D0B240; }
+  .pager-link:after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0.625em;
+    display: inline-block;
+    border-bottom: 1px solid #280353;
+    vertical-align: middle;
+    content: ''; }
+  .pager-link:last-child:after {
+    display: none; }
+
 .post {
   border-bottom: 1px solid #D0B240;
   margin-bottom: 2.5em;

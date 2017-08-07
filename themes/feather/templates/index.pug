@@ -1,9 +1,9 @@
-extends base.pug
+extends base
 
 block pageData
   
 block content
   each post in posts
     - detail = false
-    include post.pug
+    include post
   include pager

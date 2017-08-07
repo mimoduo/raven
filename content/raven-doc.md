@@ -5,14 +5,6 @@ category: projects
 summary: AAWWW yeaaa!!! Time to get drilling down to the Raven blog workflow - from getting familiar with Raven's structure to creating your own theme. If you're familiar with Pelican, you'll feel right at home (p^-^)p
 ---
 
-## Getting Started
-
-First, let's start with some of the basics of Raven by detailing where everything is:
-
-* **content**: markdown files representing your blog posts
-* **output**: static files generated based on the theme and content
-* **themes**: appearance and markup of your blog
-
 ### Installing Raven
 
 Once you're set with [npm](https://nodejs.org/en/), whip out your terminal and enter in the following:
@@ -29,10 +21,20 @@ gulp
 
 **Now you're officially ready to start creating your new blog by**:
 
+* [learning Raven's folder structure](#wheres-your),
+* [learning how Raven works](#how-raven-works),
 * [configuring your blog's settings](#configuring-raven),
 * [structuring your blog](#structuring-your-blog),
 * [styling your blog](#styling-your-blog),
 * and [creating markdown content](#creating-content)!
+
+## Where's Your @&#*
+
+First, let's start with some of the basics of Raven by detailing where everything is:
+
+* **content**: markdown files representing your blog posts
+* **output**: static files generated based on the theme and content
+* **themes**: appearance and markup of your blog
 
 ## How Raven Works
 

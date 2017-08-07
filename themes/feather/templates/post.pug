@@ -15,7 +15,7 @@ article.post(class=postClass)
             +icon("label")
           span.post-detail-label In&nbsp;
             a.post-detail-link(href=post.category + ".html")= post.category
-    if !detail
+    else
       a.post-readmore(href=post.link) Read More
   if detail
     .post-content

@@ -75,3 +75,41 @@
           font-weight: 700;
           vertical-align: middle;
         }
+
+
+/* Pager */
+
+.pager {}
+
+  .pager-link {
+    position: relative;
+    display: inline-block;
+    margin-right: em(10);
+    padding: em(5) em(10);
+    font-weight: 700;
+    color: #000;
+    transition: color .25s;
+
+    &:focus,
+    &:hover {
+      color: #D0B240;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: em(10);
+      display: inline-block;
+      border-bottom: 1px solid #280353;
+      vertical-align: middle;
+      content: '';
+    }
+
+    &:last-child {
+
+      &:after {
+        display: none;
+      }
+    }
+  }
