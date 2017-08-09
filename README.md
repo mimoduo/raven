@@ -2,7 +2,7 @@
 
 # Raven
 
-> Raven is a *refined and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass built with lightning, simplicity, and awesomeness in mind.
+> Raven is a *theme-able and flexible* **static blog generator** fed with Markdown and processed with gulp, pug, and sass built with lightning, simplicity, and awesomeness in mind.
 
 ## Features
 
