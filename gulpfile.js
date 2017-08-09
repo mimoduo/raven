@@ -125,7 +125,7 @@ gulp.task('process', ['prep'], function() {
   // Prevent duplicate nav labels
   for (var i = 0; i < nav.length; i++) {
     for (var x = i+1; x < nav.length; x++) {
-      if (nav[i].name === nav[x].name) {
+      if (i !== x && nav[i].name === nav[x].name) {
         nav.splice(x, 1);
       }
     }
