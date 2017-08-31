@@ -332,7 +332,7 @@ gulp.task('rss', function() {
 });
 
 
-gulp.task('surge', ['render', 'rss'], function() {
+gulp.task('surge', ['render', 'favicon', 'rss'], function() {
 
   return surge({
     project: './' + pkg.data.static,
