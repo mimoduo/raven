@@ -92,14 +92,7 @@
             <guid>http://raven.surge.sh/raven-doc.html</guid>
             <pubDate>Thu, 29 Jun 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[AAWWW yeaaa!!! Time to get drilling down to the Raven blog workflow - from getting familiar with Raven's structure to creating your own theme. If you're familiar with Pelican, you'll feel right at home (p^-^)p]]></description>
-            <content:encoded><![CDATA[<h2 id="getting-started">Getting Started</h2>
-<p>First, let's start with some of the basics of Raven by detailing where everything is:</p>
-<ul>
-<li><strong>content</strong>: markdown files representing your blog posts</li>
-<li><strong>output</strong>: static files generated based on the theme and content</li>
-<li><strong>themes</strong>: appearance and markup of your blog</li>
-</ul>
-<h3 id="installing-raven">Installing Raven</h3>
+            <content:encoded><![CDATA[<h3 id="installing-raven">Installing Raven</h3>
 <p>Once you're set with <a href="https://nodejs.org/en/">npm</a>, whip out your terminal and enter in the following:</p>
 <pre><code class="language-ssh">git clone https://github.com/mimoduo/raven.git
 cd raven
@@ -112,10 +105,19 @@ gulp
 </blockquote>
 <p><strong>Now you're officially ready to start creating your new blog by</strong>:</p>
 <ul>
+<li><a href="#wheres-your">learning Raven's folder structure</a>,</li>
+<li><a href="#how-raven-works">learning how Raven works</a>,</li>
 <li><a href="#configuring-raven">configuring your blog's settings</a>,</li>
 <li><a href="#structuring-your-blog">structuring your blog</a>,</li>
 <li><a href="#styling-your-blog">styling your blog</a>,</li>
 <li>and <a href="#creating-content">creating markdown content</a>!</li>
+</ul>
+<h2 id="wheres-your">Where's Your @&amp;#*</h2>
+<p>First, let's start with some of the basics of Raven by detailing where everything is:</p>
+<ul>
+<li><strong>content</strong>: markdown files representing your blog posts</li>
+<li><strong>output</strong>: static files generated based on the theme and content</li>
+<li><strong>themes</strong>: appearance and markup of your blog</li>
 </ul>
 <h2 id="how-raven-works">How Raven Works</h2>
 <p>Raven grabs all the markdown files you've written in the content folder and processes them as such:</p>
