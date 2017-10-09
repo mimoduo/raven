@@ -56,7 +56,7 @@
     }
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^7.1.5",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "feed": "^1.1.0",

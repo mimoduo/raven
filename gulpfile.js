@@ -273,7 +273,7 @@ gulp.task('rss', function() {
     image: pkg.data.site.url + 'favicon-32x32.png',
     favicon: pkg.data.site.url + 'favicon.ico',
     copyright: 'All rights reserved ' + new Date().getFullYear() + ', ' + pkg.author,
-    updated: new Date(2013, 06, 14),
+    updated: new Date(),
     feedLinks: {
       json: pkg.data.site.url + 'json',
       atom: pkg.data.site.url + 'atom',

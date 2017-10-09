@@ -19,18 +19,18 @@ html(lang="en")
       content="width=device-width, initial-scale=1.0"
     )
     if title
-      title= data.site.name + ' | ' + title
+      title=data.site.name + ' | ' + title
     else
-      title= data.site.name
+      title=data.site.name
     if description
       meta(
         name="description"
-        content= description
+        content=description
       )
     else
       meta(
         name="description"
-        content= data.site.description
+        content=data.site.description
       )
     mixin favicon(sizes)
       each size in sizes
@@ -54,6 +54,24 @@ html(lang="en")
     link(
       href="https://fonts.googleapis.com/css?family=" + includedFonts
       rel="stylesheet"
+    )
+    link(
+      href="feed.atom" 
+      type="application/atom+xml" 
+      rel="alternate" 
+      title=data.site.name + " Atom Feed"
+    )
+    link(
+      href="feed.xml" 
+      type="application/rss+xml" 
+      rel="alternate" 
+      title=data.site.name + " RSS Feed"
+    )
+    link(
+      href="feed.json" 
+      type="application/json" 
+      rel="alternate" 
+      title=data.site.name + " JSON Feed"
     )
   body.page
     figure(style="display: none")
