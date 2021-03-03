@@ -76,7 +76,7 @@
     "hljs": "^6.2.3",
     "markdown-it": "^8.4.0",
     "markdown-it-named-headers": "0.0.4",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^3.0.1",
     "require-reload": "^0.2.2"
   }
 }
