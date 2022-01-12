@@ -74,7 +74,7 @@
     "gulp-svgmin": "^1.2.4",
     "highlight.js": "^9.12.0",
     "hljs": "^6.2.3",
-    "markdown-it": "^8.4.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-named-headers": "0.0.4",
     "pug": "^2.0.0-rc.4",
     "require-reload": "^0.2.2"
